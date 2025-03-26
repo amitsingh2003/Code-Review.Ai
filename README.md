@@ -34,7 +34,7 @@ CodeReview.AI is an intelligent code review application that leverages AI to pro
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/codereview-ai.git
+git clone https://github.com/amitsingh2003/Code-Review.Ai.git
 cd codereview-ai
 ```
 
