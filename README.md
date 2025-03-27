@@ -1,5 +1,8 @@
 # CodeReview.AI 🚀💻
 
+![image](https://github.com/user-attachments/assets/9bd614be-c35e-4a79-935d-8c79f4061132)
+
+
 ## Project Overview
 
 CodeReview.AI is an intelligent code review application that leverages AI to provide comprehensive code analysis. The app allows developers to upload and review code snippets with AI-powered insights.
