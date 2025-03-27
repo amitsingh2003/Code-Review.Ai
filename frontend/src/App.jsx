@@ -39,7 +39,7 @@ function exampleFunction() {
   const reviewCode = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("https://backend-bpc2f4ijs-amit-singhs-projects-257d1347.vercel.app/ai/get-review", {
+      const response = await axios.post("http://localhost:3000/ai/get-review", {
         code,
         detailed: true,
       });
