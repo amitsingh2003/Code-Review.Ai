@@ -39,7 +39,7 @@ function exampleFunction() {
   const reviewCode = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("https://code-review-ai-back.onrender.com/ai/get-review", {
+      const response = await axios.post("http://localhost:3000/ai/get-review", {
         code,
         detailed: true,
       });
@@ -54,7 +54,7 @@ function exampleFunction() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0A1128] via-[#0F1A3D] to-[#050920] text-white selection:bg-blue-500/30 overflow-hidden">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* Header */}
+        
         <header className="flex justify-between items-center mb-8 animate-fade-in-down">
           <div className="flex items-center space-x-4">
             <Code className="w-10 h-10 text-blue-400 animate-pulse" />
@@ -80,9 +80,7 @@ function exampleFunction() {
           </motion.label>
         </header>
 
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Code Editor Section */}
           <div className="bg-gradient-to-br from-[#1A2140] to-[#161A2E] rounded-2xl p-6 border border-[#2C3A5A]/30 shadow-2xl backdrop-blur-sm animate-fade-in-left relative overflow-hidden group">
             <div className="flex justify-between items-center mb-4 relative z-10">
               <h2 className="text-xl font-semibold flex items-center space-x-2">
@@ -131,7 +129,7 @@ function exampleFunction() {
             </motion.button>
           </div>
 
-          {/* AI Review Section */}
+         
           <div className="bg-gradient-to-br from-[#1A2140] to-[#161A2E] rounded-2xl p-6 border border-[#2C3A5A]/30 shadow-2xl backdrop-blur-sm animate-fade-in-right relative overflow-hidden group">
             <div className="flex items-center mb-4 relative z-10">
               <h2 className="text-xl font-semibold flex items-center space-x-2">
@@ -148,27 +146,27 @@ function exampleFunction() {
                   <ReactMarkdown
                     components={{
                       h1: ({ node, ...props }) => (
-                        <h1 
-                          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-3 hover:scale-[1.02] transition-transform duration-300" 
-                          {...props} 
+                        <h1
+                          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-3 hover:scale-[1.02] transition-transform duration-300"
+                          {...props}
                         />
                       ),
                       h2: ({ node, ...props }) => (
-                        <h2 
-                          className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400 mt-4 mb-2 hover:scale-[1.01] transition-transform duration-300" 
-                          {...props} 
+                        <h2
+                          className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400 mt-4 mb-2 hover:scale-[1.01] transition-transform duration-300"
+                          {...props}
                         />
                       ),
                       p: ({ node, ...props }) => (
-                        <p 
-                          className="text-gray-300 mb-3 leading-relaxed hover:text-gray-200 transition-colors duration-300 selection:bg-blue-500/50" 
-                          {...props} 
+                        <p
+                          className="text-gray-300 mb-3 leading-relaxed hover:text-gray-200 transition-colors duration-300 selection:bg-blue-500/50"
+                          {...props}
                         />
                       ),
                       ul: ({ node, ...props }) => (
-                        <ul 
-                          className="list-disc list-inside text-gray-300 pl-4 mb-3 marker:text-blue-500 hover:marker:text-blue-400 transition-colors duration-300" 
-                          {...props} 
+                        <ul
+                          className="list-disc list-inside text-gray-300 pl-4 mb-3 marker:text-blue-500 hover:marker:text-blue-400 transition-colors duration-300"
+                          {...props}
                         />
                       ),
                     }}
@@ -187,7 +185,7 @@ function exampleFunction() {
         </div>
       </div>
 
-      {/* Global Styles */}
+     
       <style jsx global>{`
         /* Custom Scrollbar for ALL scrollable elements */
         *::-webkit-scrollbar {
@@ -199,13 +197,21 @@ function exampleFunction() {
           border-radius: 10px;
         }
         *::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), rgba(109, 40, 217, 0.5));
+          background: linear-gradient(
+            to bottom,
+            rgba(59, 130, 246, 0.5),
+            rgba(109, 40, 217, 0.5)
+          );
           border-radius: 10px;
           border: 2px solid rgba(59, 130, 246, 0.1);
           transition: all 0.3s ease;
         }
         *::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, rgba(59, 130, 246, 0.7), rgba(109, 40, 217, 0.7));
+          background: linear-gradient(
+            to bottom,
+            rgba(59, 130, 246, 0.7),
+            rgba(109, 40, 217, 0.7)
+          );
           border: 2px solid rgba(59, 130, 246, 0.2);
         }
 
