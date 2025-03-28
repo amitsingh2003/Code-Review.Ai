@@ -39,7 +39,7 @@ function exampleFunction() {
   const reviewCode = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post("https://code-review-ai-1.onrender.com/ai/get-review", {
         code,
         detailed: true,
       });
