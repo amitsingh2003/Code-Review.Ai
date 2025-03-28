@@ -1,13 +1,8 @@
 require('dotenv').config();
 const app = require('./src/app');
 
-const cors = require('cors');
+const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-    origin: ['http://localhost:5173' , 'https://code-review-ai-aivj.onrender.com'],
-    credentials: true
-}));
-
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
