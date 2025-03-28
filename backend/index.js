@@ -4,7 +4,8 @@ const app = require('./src/app');
 const cors = require('cors');
 
 app.use(cors({
-    origin: ['http://localhost:5173']
+    origin: ['http://localhost:5173' , 'https://code-review-ai-aivj.onrender.com'],
+    credentials: true
 }));
 
 app.listen(3000, () => {
