@@ -1,6 +1,7 @@
 # CodeReview.AI 🚀💻
 
-![image](https://github.com/user-attachments/assets/9bd614be-c35e-4a79-935d-8c79f4061132)
+![image](https://github.com/user-attachments/assets/6c0240fb-6614-435b-84ee-624c9f19ed06)
+
 
 
 ## Project Overview
