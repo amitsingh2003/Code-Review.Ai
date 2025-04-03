@@ -12,10 +12,10 @@ import {
   X,
 } from "lucide-react";
 import axios from "axios";
-import ReactMarkdown from "react-markdown";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { githubDark } from "@uiw/codemirror-theme-github";
+import ReviewOutput from "./ReviewOutput"; 
 
 const MinimalistLogo = () => {
   return (
@@ -92,7 +92,7 @@ function exampleFunction() {
         setViewMode("review");
       }
     } catch (error) {
-      setReview("Error generating review. Please try again.");
+      setReview("### Error\n\nUnable to generate review. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -269,59 +269,9 @@ function exampleFunction() {
 
             <div className="flex-grow relative rounded-md overflow-hidden shadow-lg border border-gray-800 bg-gray-900">
               <div className="absolute -inset-1 bg-violet-500/10 rounded-md blur-md opacity-50"></div>
-              <div className="relative h-full overflow-y-auto p-4">
-                {review ? (
-                  <ReactMarkdown
-                    components={{
-                      h1: ({ node, ...props }) => (
-                        <h1
-                          className="text-xl font-bold text-violet-300 mb-3"
-                          {...props}
-                        />
-                      ),
-                      h2: ({ node, ...props }) => (
-                        <h2
-                          className="text-lg font-semibold text-violet-200 mt-4 mb-2"
-                          {...props}
-                        />
-                      ),
-                      p: ({ node, ...props }) => (
-                        <p
-                          className="text-gray-300 mb-3 leading-relaxed"
-                          {...props}
-                        />
-                      ),
-                      ul: ({ node, ...props }) => (
-                        <ul
-                          className="list-disc list-inside text-gray-300 pl-4 mb-3 space-y-1"
-                          {...props}
-                        />
-                      ),
-                      li: ({ node, ...props }) => (
-                        <li className="text-gray-300 mb-1" {...props} />
-                      ),
-                      code: ({ node, ...props }) => (
-                        <code
-                          className="bg-gray-800 text-violet-300 px-1 py-0.5 rounded text-sm font-mono"
-                          {...props}
-                        />
-                      ),
-                    }}
-                  >
-                    {review}
-                  </ReactMarkdown>
-                ) : (
-                  <div className="h-full flex flex-col items-center justify-center text-center p-4">
-                    <Sparkles className="w-10 h-10 text-violet-400 mb-3 opacity-70" />
-                    <p className="text-violet-300 font-medium">
-                      Awaiting Code Submission
-                    </p>
-                    <p className="text-sm mt-2 text-gray-400 max-w-sm">
-                      Submit your code to receive AI-powered insights and
-                      optimizations.
-                    </p>
-                  </div>
-                )}
+              <div className="relative h-full overflow-y-auto">
+                {/* Replace the ReactMarkdown component with our new ReviewOutput component */}
+                <ReviewOutput review={review} />
               </div>
             </div>
 
@@ -462,13 +412,6 @@ function exampleFunction() {
 
         .cm-activeLine {
           background-color: rgba(59, 130, 246, 0.07) !important;
-        }
-
-        /* Make React Markdown fill available space */
-        .markdown-body {
-          height: 100%;
-          width: 100%;
-          overflow: auto;
         }
       `}</style>
     </div>
